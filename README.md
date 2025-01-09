@@ -25,8 +25,10 @@ Key Tasks and Insights
   - The dashboard provides actionable insights for business decision-making.
   
 Tools and Technologies
-SQL: Used for data processing, revenue aggregation, and generating insights through complex queries.
-Dashboard Visualization: Created an interactive dashboard to communicate findings effectively.
+- SQL: 
+  - Used for data processing, revenue aggregation, and generating insights through complex queries.
+- Dashboard Visualization:
+  - Created an interactive dashboard to communicate findings effectively.
 
 Conclusion:
 The analysis highlights a significant improvement in PEDAL's credit sales performance between 2023 and 2024. It also identifies key products driving revenue growth and provides insights into seasonal trends that can inform future strategies.
