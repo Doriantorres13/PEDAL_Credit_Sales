@@ -18,11 +18,11 @@ Key Tasks and Insights
   - Examined the monthly revenue trends for 2023 and 2024.
   - Highlighted percentage increases in revenue for corresponding months across the two years.
 - Dashboard Creation:
-- Built a detailed dashboard visualizing:
-  - Yearly and quarterly revenue differences.
-  - Top-selling credits by revenue and quantity for each year.
-  - Trends in revenue growth across months.
-- The dashboard provides actionable insights for business decision-making.
+  - Built a detailed dashboard visualizing:
+    - Yearly and quarterly revenue differences.
+    - Top-selling credits by revenue and quantity for each year.
+    - Trends in revenue growth across months.
+  - The dashboard provides actionable insights for business decision-making.
   
 Tools and Technologies
 SQL: Used for data processing, revenue aggregation, and generating insights through complex queries.
