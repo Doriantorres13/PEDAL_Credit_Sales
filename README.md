@@ -1,9 +1,10 @@
 Summary of PEDAL Credit Sales Analysis
 
-This project involves analyzing PEDAL's credit sales data from 2023 and 2024, focusing on sales performance, trends, and key insights. The following steps were performed to clean, process, and visualize the data:
+This project analyzes PEDAL's credit sales data from 2023 and 2024, focusing on sales performance, trends, and key insights. The following steps were performed to clean, process, and visualize the data:
 
 Key Tasks and Insights
-- Data Cleaning: Removed negative values in the sales data to ensure accuracy by converting them to their absolute values.
+- Data Cleaning:
+  - Removed negative values in the sales data to ensure accuracy by converting them to their absolute values.
 - Revenue Comparison:
   - Calculated the total revenue from credit sales for 2023 and 2024.
   - Identified a 52.87% increase in credit sales revenue from 2023 to 2024.
