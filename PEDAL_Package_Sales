@@ -6,7 +6,7 @@ UPDATE sales
 SET Quantity = ABS(CAST(Quantity AS INTEGER))
 WHERE CAST(Quantity AS INTEGER) < 0;
 
--- How much money did PEDAL make off of credits in 2024 compared to 2023
+-- How much revenue did PEDAL make off of packages in 2024 compared to 2023
 
 WITH _23revenue AS (
     SELECT 
@@ -61,55 +61,55 @@ SELECT
     ROUND(((Total_Revenue2 - Total_Revenue1) * 100) / Total_Revenue1, 2) AS Percentage_Increase
 FROM _23revenue, _24revnue
 ;
-
--- What were the top selling credits by Quantity in 2023 and 2024 
-
-WITH top_selling_2023 AS (
-    SELECT 
-        '2023' AS Year,
-        Product,
-        SUM(Quantity) AS Quantity,
-        ROUND(SUM(NetSales)) AS Revenue_Total
-    FROM sales
-    WHERE STRFTIME('%Y', Date) = '2023'
-    AND ProductType = 'Credits'
-    AND Product NOT IN('Late Cancel Fee', 'No Show Fee')
-    GROUP BY Product
-    ORDER BY SUM(Quantity) DESC
-    LIMIT 5
-),
-top_selling_2024 AS (
-    SELECT 
-        '2024' AS Year,
-        Product,
-        SUM(Quantity) AS Quantity,
-        ROUND(SUM(NetSales)) AS Revenue_Total
-    FROM sales
-    WHERE STRFTIME('%Y', Date) ='2024'
-    AND ProductType = 'Credits'
-    AND Product NOT IN('Late Cancel Fee', 'No Show Fee')
-    GROUP BY Product
-    ORDER BY SUM(Quantity) DESC
-    LIMIT 5
-)
-SELECT  
-    Year,
-    Product,
-    Quantity,
-    Revenue_Total
-FROM top_selling_2023
-
-UNION ALL
-
-SELECT  
-    Year,
-    Product,
-    Quantity,
-    Revenue_Total
-FROM top_selling_2024
-;
     
--- What were the top selling credits by Revenue in 2023 and 2024 
+-- What were the top-selling packages by Quantity in 2023 and 2024 
+
+WITH top_selling_2023 AS (
+    SELECT 
+        '2023' AS Year,
+        Product,
+        SUM(Quantity) AS Quantity,
+        ROUND(SUM(NetSales)) AS Revenue_Total
+    FROM sales
+    WHERE STRFTIME('%Y', Date) = '2023'
+    AND ProductType = 'Credits'
+    AND Product NOT IN('Late Cancel Fee', 'No Show Fee')
+    GROUP BY Product
+    ORDER BY SUM(Quantity) DESC
+    LIMIT 5
+),
+top_selling_2024 AS (
+    SELECT 
+        '2024' AS Year,
+        Product,
+        SUM(Quantity) AS Quantity,
+        ROUND(SUM(NetSales)) AS Revenue_Total
+    FROM sales
+    WHERE STRFTIME('%Y', Date) ='2024'
+    AND ProductType = 'Credits'
+    AND Product NOT IN('Late Cancel Fee', 'No Show Fee')
+    GROUP BY Product
+    ORDER BY SUM(Quantity) DESC
+    LIMIT 5
+)
+SELECT  
+    Year,
+    Product,
+    Quantity,
+    Revenue_Total
+FROM top_selling_2023
+
+UNION ALL
+
+SELECT  
+    Year,
+    Product,
+    Quantity,
+    Revenue_Total
+FROM top_selling_2024
+; 
+
+-- What were the top-selling packages by Revenue in 2023 and 2024 
 
 WITH top_selling_2023 AS (
     SELECT 
@@ -123,7 +123,7 @@ WITH top_selling_2023 AS (
     AND Product NOT IN('Late Cancel Fee', 'No Show Fee')
     GROUP BY Product
     ORDER BY ROUND(SUM(NetSales)) DESC
-    LIMIT 10
+    LIMIT 5
 ),
 top_selling_2024 AS (
     SELECT 
@@ -137,7 +137,7 @@ top_selling_2024 AS (
     AND Product NOT IN('Late Cancel Fee', 'No Show Fee')
     GROUP BY Product
     ORDER BY ROUND(SUM(NetSales)) DESC
-    LIMIT 10
+    LIMIT 5
 )
 SELECT  
     Year,
@@ -156,7 +156,7 @@ SELECT
 FROM top_selling_2024
 ;
 
--- How much money did PEDAL each month in 2023 and 2024
+-- How much money did PEDAL make in each month of 2023 and 2024
 
 WITH _2023_breakdown AS (
     SELECT 
@@ -186,3 +186,5 @@ FROM _2023_breakdown AS y1
 FULL OUTER JOIN _2024_breakdown AS y2
     ON y1.Month = y2.Month 
 ;
+ 
+   
